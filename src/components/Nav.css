@@ -1,23 +1,174 @@
-.navbar{
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
     display: flex;
-    width: 100%;
-    height: 5vh;
-    background-color: aquamarine;
-}
-.navbar ul li a {
-    text-decoration: none;
-    margin: 1rem;
-    /* position: relative;
-    float: right; */
-    font-size: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    background-color: #24252a;
+  }
+  
+  .logo {
     cursor: pointer;
-}
-.navbar ul li a:hover{
-    color: blue;
-}
-.navbar ul li {
+  }
+  .logo img{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 1rem
+
+  }
+  
+  .nav__links a,
+  .cta,
+  .overlay__content a {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    color: #edf0f1;
+    text-decoration: none;
+  }
+  .nav__links a{
+    padding: 0.5rem;
+    border-radius: 1.5rem
+  }
+  .nav__links {
     list-style: none;
-}
-.navbar ul li {
-    display: inline-block;
-}
+    display: flex;
+  }
+  
+  .nav__links li {
+    padding: 0px 20px;
+  }
+  
+  .nav__links li a {
+    transition: color 0.3s ease 0s;
+  }
+  
+  .nav__links li a:hover {
+    padding: 0.5rem;
+    background-color: rgb(255, 205, 205);
+    color: #0088a9;
+  }
+  
+  .cta {
+    padding: 9px 25px;
+    background-color: rgba(0, 136, 169, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease 0s;
+  }
+  
+  .cta:hover {
+    background-color: rgba(0, 136, 169, 0.8);
+  }
+  
+  /* Mobile Nav */
+  
+  .menu {
+    display: none;
+  }
+  
+  .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: #24252a;
+    overflow-x: hidden;
+    transition: width 0.5s ease 0s;
+  }
+  
+  .overlay--active {
+    width: 100%;
+  }
+  
+  .overlay__content {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .overlay .overlay__content li{
+    list-style: none
+  }
+  
+  .overlay a {
+    padding: 15px;
+    font-size: 36px;
+    display: block;
+    transition: color 0.3s ease 0s;
+  }
+  
+  .overlay a:hover,
+  .overlay a:focus {
+    color: #0088a9;
+  }
+  .overlay .close {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    color: #edf0f1;
+    cursor: pointer;
+  }
+  /* media Query for responsive */
+  @media screen and (max-height: 450px) {
+    .overlay a {
+      font-size: 20px;
+    }
+    .overlay .close {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+  }
+  
+  @media only screen and (max-width: 800px) {
+    .nav__links,
+    .cta {
+      display: none;
+    }
+    .menu {
+      display: initial;
+    }
+  }
+  /* responsive menu for tablet */
+  @media (min-height: 820px) and (max-height: 990px){
+
+    .nav__links li {
+        /* position: absolute; */
+
+        position: relative;
+        padding: 0px 2px;
+        left: 2rem;
+      }
+      .cta {
+        position: relative;
+        padding: 2px 10px;
+        left: 2rem;        
+      }
+  }
+  /* ---------- need to make responsive for iPad Air 820px and Surface Pro 7 912px */
+  /* @media screen and (max-height: 912px){
+
+    .nav__links li {
+        position: absolute;
+
+        position: relative;
+        padding: 0px 1px;
+        left: 2rem;
+      }
+      .cta {
+        position: relative;
+        padding: 2px 5px;
+        left: 2rem;        
+      }
+  } */
+  
